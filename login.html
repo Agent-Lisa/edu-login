@@ -9,6 +9,19 @@
         body {
             font-family: arial, sans-serif;
             background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .menu-bar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .menu-bar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 10px;
         }
         .container {
             width: 300px;
@@ -52,6 +65,11 @@
     </style>
 </head>
 <body>
+    <div class="menu-bar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
     <div class="container">
         <h2>educational institute login</h2>
         <form id="login-form">
@@ -67,11 +85,11 @@
         </form>
     </div>
     <script>
-        const loginform = document.getelementbyid('login-form');
-        loginform.addeventlistener('submit', (e) => {
-            e.preventdefault();
-            const username = document.getelementbyid('username').value;
-            const password = document.getelementbyid('password').value;
+        const loginform = document.getElementById('login-form');
+        loginform.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
             // to do: implement login logic here
             console.log(`username: ${username}, password: ${password}`);
             // example login logic using fetch api
@@ -80,11 +98,12 @@
                 headers: {
                     'content-type': 'application/json'
                 },
-                body: json.stringify({ username, password })
+                body: JSON.stringify({ username, password })
             })
             .then((res) => res.json())
             .then((data) => console.log(data))
             .catch((err) => console.error(err));
         });
     </script>
+</body>
 </html>
