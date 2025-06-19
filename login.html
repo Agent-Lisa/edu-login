@@ -62,6 +62,26 @@
         .btn:hover {
             background-color: #3e8e41;
         }
+        .side-btn {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #ff69b4;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .side-btn:hover {
+            background-color: #ff99cc;
+        }
+        #side-btn-left {
+            left: 0;
+        }
+        #side-btn-right {
+            right: 0;
+        }
     </style>
 </head>
 <body>
@@ -70,6 +90,8 @@
         <a href="#">About</a>
         <a href="#">Contact</a>
     </div>
+    <button class="side-btn" id="side-btn-left">Left</button>
+    <button class="side-btn" id="side-btn-right">Right</button>
     <div class="container">
         <h2>educational institute login</h2>
         <form id="login-form">
